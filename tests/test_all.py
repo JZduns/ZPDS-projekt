@@ -31,3 +31,6 @@ def test_user_allergies():
     )
     assert user.is_allergic_to("peanuts") is True
     assert user.is_allergic_to("milk") is False
+
+def test_pass():
+    pass
