@@ -11,6 +11,7 @@ class User:
         premium: bool,
         allergies: list,
         vegetarian: bool,
+        favourite_recipes: list,
     ):
         """
         Initialize a User object.
@@ -28,6 +29,7 @@ class User:
         self._premium = premium
         self._allergies = allergies
         self._vegetarian = vegetarian
+        self._favourite_recipes = favourite_recipes
 
     @property
     def username(self) -> str:
@@ -160,3 +162,23 @@ class User:
             if i.lower() == ingredient.lower():
                 return True
         return False
+
+    @property
+    def favourite_recipes(self) -> list:
+        """
+        Get the list of favorite recipes of the user.
+
+        Returns:
+        - list: A list of favorite recipes of the user.
+        """
+        return self._favourite_recipes
+
+    @favourite_recipes.setter
+    def favourite_recipes(self, new_favourite_recipes: list):
+        """
+        Set new favorite recipes for the user.
+
+        Args:
+        - new_favourite_recipes (list): The new list of favorite recipes to set for the user.
+        """
+        self._favourite_recipes = new_favourite_recipes

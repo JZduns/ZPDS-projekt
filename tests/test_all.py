@@ -1,5 +1,6 @@
-from src.food import ingredient, recipe
 from src.user.user import User
+from src.food.recipe import Recipe
+from src.food.ingredient import Ingredient
 
 
 def test_user_init():
