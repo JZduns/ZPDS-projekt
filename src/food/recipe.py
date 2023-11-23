@@ -1,10 +1,16 @@
 class Recipe:
     """
-    A class representing a recipe with necessary, additional, and alternative ingredients along with calorie information.
+    A class representing a recipe with necessary, additional, and alternative ingredients along with calorie information
     """
 
-    def __init__(self, name: str, necessary_ingredients: list, additional_ingredients: list,
-                 alternative_ingredients: list, calories: int):
+    def __init__(
+        self,
+        name: str,
+        necessary_ingredients: list,
+        additional_ingredients: list,
+        alternative_ingredients: list,
+        calories: int,
+    ):
         """
         Initialize a Recipe object.
 

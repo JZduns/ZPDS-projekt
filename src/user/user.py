@@ -3,7 +3,15 @@ class User:
     A class representing a user with username, password, email, premium status, allergies, vegetarian.
     """
 
-    def __init__(self, username: str, password: str, email: str, premium: bool, allergies: list, vegetarian: bool):
+    def __init__(
+        self,
+        username: str,
+        password: str,
+        email: str,
+        premium: bool,
+        allergies: list,
+        vegetarian: bool,
+    ):
         """
         Initialize a User object.
 
@@ -142,6 +150,12 @@ class User:
         self._vegetarian = vegetarian
 
     def is_allergic_to(self, ingredient):
+        """
+        Checks if user is allergic to the provided ingredient.
+
+        :param ingredient: The that you want to check if user is allergic to.
+        :return: True if user is allergic to specified ingredient.
+        """
         for i in self.allergies:
             if i.lower() == ingredient.lower():
                 return True
