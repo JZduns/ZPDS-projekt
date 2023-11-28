@@ -10,7 +10,8 @@ def test_user_init():
         email="maciek123@gmail.com",
         premium=False,
         allergies=["peanuts", "milk"],
-        vegetarian=True
+        vegetarian=True,
+        favourite_recipes=["hawaii_pizza"]
     )
     assert user.username == "maciek"
     assert user.password == "haslo123"
@@ -27,10 +28,12 @@ def test_user_allergies():
         email="maciek123@gmail.com",
         premium=False,
         allergies=["peanuts"],
-        vegetarian=False
+        vegetarian=False,
+        favourite_recipes=["pepperoni_pizza"]
     )
     assert user.is_allergic_to("peanuts") is True
     assert user.is_allergic_to("milk") is False
+
 
 def test_pass():
     pass
