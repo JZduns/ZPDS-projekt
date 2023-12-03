@@ -34,6 +34,7 @@ with closing(sqlite3.connect("database/database.db")) as connection:
 				ingredient_name text,
 				recipe_name text,
 				level integer,
+				primary key(ingredient_name, recipe_name)
 				foreign key (ingredient_name)
 				references ingredients(name),
 				foreign key (recipe_name)
@@ -54,3 +55,17 @@ with closing(sqlite3.connect("database/database.db")) as connection:
 			)
 		"""
 		cursor.execute(createUsers)
+		
+		createAllergies = """
+			create table if not exists allergies
+			(
+				username text,
+				ingredient_name text,
+				primary key (username, ingredient_name)
+				foreign key (username)
+				references users(username)
+				foreign key (ingredient_name)
+				references ingredients(name)
+			)
+		"""
+		cursor.execute(createAllergies)
