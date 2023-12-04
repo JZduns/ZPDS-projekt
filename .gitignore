@@ -1,1 +1,4 @@
 database/*
+
+*.pyc
+mysite/database.db
