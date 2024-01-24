@@ -10,6 +10,8 @@ class Recipe:
         additional_ingredients: list,
         alternative_ingredients: list,
         calories: int,
+        tags: list,
+        time_to_cook: int,
     ):
         """
         Initialize a Recipe object.
@@ -26,6 +28,8 @@ class Recipe:
         self._additional_ingredients = additional_ingredients
         self._alternative_ingredients = alternative_ingredients
         self._calories = calories
+        self._tags = tags
+        self._time_to_cook = time_to_cook
 
     @property
     def name(self) -> str:
@@ -126,3 +130,43 @@ class Recipe:
         - new_calories (int): The new calorie information to set for the recipe.
         """
         self._calories = new_calories
+
+    @property
+    def tags(self) -> list:
+        """
+        Get the tags associated with the recipe.
+
+        Returns:
+        - list: The list of tags for the recipe.
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, new_tags: list):
+        """
+        Set new tags for the recipe.
+
+        Args:
+        - new_tags (list): The new list of tags to set for the recipe.
+        """
+        self._tags = new_tags
+
+    @property
+    def time_to_cook(self) -> int:
+        """
+        Get the time to cook the recipe.
+
+        Returns:
+        - int: The time to cook the recipe in minutes.
+        """
+        return self._time_to_cook
+
+    @time_to_cook.setter
+    def time_to_cook(self, new_time: int):
+        """
+        Set a new time to cook for the recipe.
+
+        Args:
+        - new_time (int): The new time to set for cooking the recipe in minutes.
+        """
+        self._time_to_cook = new_time
