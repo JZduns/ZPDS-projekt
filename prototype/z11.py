@@ -25,7 +25,7 @@ html_temp = """
 
 # Set the page configuration
 st.set_page_config(
-    page_title="Aplikacja z przepisami",
+    page_title="ugotowAI",
     layout="wide",
     initial_sidebar_state="auto",
     page_icon=None,
