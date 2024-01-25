@@ -19,7 +19,7 @@ html_temp = """
     }
     </style>
     <div style="background-color:#F6F6F6;padding:13px;text-align:center;">
-    <h1 style="color: #FF0000;">Aplikacja z przepisami</h1>
+    <h1 style="color: #FF0000;">ugotowAI</h1>
     </div>
 """
 
