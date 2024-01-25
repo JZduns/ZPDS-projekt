@@ -40,7 +40,7 @@ st.image("./webrec.jpg", use_column_width=True)
 
 user_input = st.text_input("Wpisz składniki: ")
 
-df = pd.read_csv('../../../Downloads/Food Ingredients and Recipe Dataset with Image Name Mapping.csv')
+df = pd.read_csv('Food Ingredients and Recipe Dataset with Image Name Mapping.csv')
 df = df[['Title', 'Cleaned_Ingredients']]
 
 def dod_do_list(user_input, list_sklad):
