@@ -106,7 +106,7 @@ if st.button("Dodaj czas"):
 if 'lista_czasow' in st.session_state and st.session_state.lista_czasow:
     st.write("Lista czasów:", st.session_state.lista_czasow)
 
-st.write("Lista która wleci do algorytmu: ")
+#st.write("Lista która wleci do algorytmu: ")
 
 combined_list = []
 
@@ -119,9 +119,9 @@ if 'lista_sprzetow' in st.session_state:
 if 'lista_czasow' in st.session_state:
     combined_list.extend(st.session_state.lista_czasow)
 combined_string=''
-if combined_list:
-    combined_string = ",".join(combined_list)
-    st.write("Połączona lista wszystkich elementów:", combined_string)
+# if combined_list:
+#     combined_string = ",".join(combined_list)
+#     st.write("Połączona lista wszystkich elementów:", combined_string)
 
 #nie ruszac tego nizej#
 def recommend_dishes(data, user_input):
@@ -187,9 +187,14 @@ def recommend_dishes(data, user_input):
 print(combined_string)
 
 if st.button("Wyszukaj przepisy"):
+
+    if combined_list:
+        combined_string = ",".join(combined_list)
+        st.write(combined_string)
+
     if combined_string:
         recommended_dishes = recommend_dishes(df, combined_string)
-        st.subheader("Recommended Dishes:")
+        st.subheader("Przepisy:")
 
         if not recommended_dishes.empty:
             # Create a dictionary to store whether the ingredients expander is open for each dish
@@ -219,9 +224,9 @@ if st.button("Wyszukaj przepisy"):
 
                     st.markdown('\n'.join([f"- {ingredient}" for ingredient in ingredients_list]))
         else:
-            st.write("No recommended dishes found. Please try a different combination of ingredients.")
+            st.write("Brak przepisów z podaną kombinacją składników.")
 
 
     else:
-        st.warning("Please enter ingredients to get recommendations.")
+        st.warning("Proszę podać składniki.")
 
